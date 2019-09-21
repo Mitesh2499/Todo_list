@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% if item %}
+    
+    <form class="form-inline" method="post" >
+        {% csrf_token %}
+        <div class="form-group">
+            <label for=""></label>
+            <input type="search" value="{{ item.item }}" name="item" class="form-control" placeholder="{{ item.item }}" aria-describedby="helpId">
+            <input type="hidden" value="{{ item.completed }}" name="completed">
+            <button type="submit" name="" id="" class="btn btn-primary" >Edit Item</button>
+        </div>
+    </form>
+  {% endif %}
+{% endblock  %}
